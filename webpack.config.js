@@ -12,13 +12,16 @@ var templateContent = '<html>' +
   '</body>' +
 '</html>';
 
+var entry = ['./src/index'];
+if (process.env.NODE_ENV != 'prod') {
+  entry.push('webpack-dev-server/client?http://localhost:3000');
+  entry.push('webpack/hot/only-dev-server');
+}
+
+
 module.exports = {
   devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
+  entry: entry,
   output: {
     path: path.join(__dirname, 'dist/static'),
     filename: 'bundle.js',
