@@ -13,11 +13,10 @@ var templateContent = '<html>' +
 '</html>';
 
 var entry = ['./src/index'];
-if (process.env.NODE_ENV != 'prod') {
-  entry.push('webpack-dev-server/client?http://localhost:3000');
-  entry.push('webpack/hot/only-dev-server');
+var cssLoader = 'style-loader!css-loader';
+if (process.env.NODE_ENV) {
+  cssLoader = ExtractTextPlugin.extract('style-loader', 'css-loader');
 }
-
 
 module.exports = {
   devtool: 'eval',
@@ -25,7 +24,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist/static'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: 'static/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -44,7 +43,7 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
       },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') }
+      { test: /\.css$/, loader: cssLoader }
     ]
   }
 };
