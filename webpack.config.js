@@ -24,16 +24,16 @@ module.exports = {
   devtool: 'eval',
   entry: entry,
   output: {
-    path: path.join(__dirname, 'dist/static'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'static/'
+    publicPath: process.env.NODE_ENV ? '' : '/static/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("[name].css"),
     new HtmlWebpackPlugin({
       title: 'lizandbrendangetmarried.com',
-      filename: '../index.html',
+      filename: 'index.html',
       templateContent: templateContent,
       inject: true
     })
