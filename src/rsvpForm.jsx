@@ -62,6 +62,14 @@ export default class RsvpForm extends Component {
       requestChange: this._handleEmailChange
     };
 
+    let buttonFunc = (label, isActive, onClick) => {
+      let tick = null;
+      if (isActive) {
+        tick = <i className='fa fa-check'></i>;
+      }
+      return <button type='button' className={isActive ? 'active' : null} onClick={onClick}>{label} {tick}</button>;
+    };
+
     return (
       <section className='rsvp-form'>
         <p>Please indicate if you are able to attend our wedding using the form below.</p>
@@ -71,18 +79,18 @@ export default class RsvpForm extends Component {
             <input type='email' required placeholder='Email' valueLink={emailLink} />
           </div>
           <div className='row events'>
-            <button type='button' className={this.state.friday ? 'active' : null} onClick={() => this.setState({ friday: !this.state.friday })}>Friday evening 8th April @ Berry Inn Hotel</button>
-            <button type='button' className={this.state.ceremony ? 'active' : null} onClick={() => this.setState({ ceremony: !this.state.ceremony })}>Ceremony 2pm 9th April @ Berry Courthouse</button>
-            <button type='button' className={this.state.reception ? 'active' : null} onClick={() => this.setState({ reception: !this.state.reception })}>Reception 5pm 9th April @ Berry school of arts community hall</button>
+            {buttonFunc('Friday evening 8th April @ Berry Inn Hotel', this.state.friday, () => this.setState({ friday: !this.state.friday }))}
+            {buttonFunc('Ceremony 2pm 9th April @ Berry Courthouse', this.state.ceremony, () => this.setState({ friday: !this.state.ceremony }))}
+            {buttonFunc('Reception 5pm 9th April @ Berry school of arts community hall', this.state.reception, () => this.setState({ friday: !this.state.reception }))}
           </div>
           <div className='row dietary'>
             <p>Please indicate any dietary requirements below.</p>
-            <button type='button' className={this.state.dietary === 'everything' ? 'active' : null} onClick={() => this.setState({ dietary: 'everything' })}>Eats everything</button>
-            <button type='button' className={this.state.dietary === 'vegetarian' ? 'active' : null} onClick={() => this.setState({ dietary: 'vegetarian' })}>Vegetarian</button>
-            <button type='button' className={this.state.dietary === 'other' ? 'active' : null} onClick={() => this.setState({ dietary: 'other' })}>Other (we&#39;ll be in touch)</button>
+            {buttonFunc('Eats everything', this.state.dietary === 'everything', () => this.setState({ dietary: 'everything' }))}
+            {buttonFunc('Vegetarian', this.state.dietary === 'vegetarian', () => this.setState({ dietary: 'vegetarian' }))}
+            {buttonFunc('Other (we\'ll be in touch)', this.state.dietary === 'other', () => this.setState({ dietary: 'other' }))}
           </div>
           <div className='row action'>
-            <button type='button' onClick={this._submitForm.bind(this)}>Submit</button>
+            <button type='button' onClick={this._submitForm.bind(this)}>Submit <i className='fa fa-thumbs-o-up'></i></button>
           </div>
         </form>
       </section>

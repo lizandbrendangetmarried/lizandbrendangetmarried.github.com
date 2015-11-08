@@ -79,7 +79,7 @@ section.rsvp-form {
 }
 
 .rsvp-form form > div.row > button.active {
-  background: #e0e0e0;
+  background: #FFE9C6;
 }
 
 .rsvp-form form > div.row.action {
@@ -110,5 +110,9 @@ section.container {
 
   body, div#root {
     background: none;
+  }
+
+  section.container div.image-wrapper > img {
+    width: 100%;
   }
 }
