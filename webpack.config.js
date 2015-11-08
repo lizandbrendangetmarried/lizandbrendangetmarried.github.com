@@ -6,6 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var templateContent = '<html>' +
   '<head>' +
     '<title>lizandbrendangetmarried.com</title>' +
+    '<link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet" type="text/css">' +
   '</head>' +
   '<body>' +
     '<div id=\'root\'></div>' +
@@ -39,7 +40,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js|\.jsx$/,
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
       },
