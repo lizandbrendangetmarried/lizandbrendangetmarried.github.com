@@ -80,8 +80,8 @@ export default class RsvpForm extends Component {
           </div>
           <div className='row events'>
             {buttonFunc('Friday evening 8th April @ Berry Inn Hotel', this.state.friday, () => this.setState({ friday: !this.state.friday }))}
-            {buttonFunc('Ceremony 2pm 9th April @ Berry Courthouse', this.state.ceremony, () => this.setState({ friday: !this.state.ceremony }))}
-            {buttonFunc('Reception 5pm 9th April @ Berry school of arts community hall', this.state.reception, () => this.setState({ friday: !this.state.reception }))}
+            {buttonFunc('Ceremony 2pm 9th April @ Berry Courthouse', this.state.ceremony, () => this.setState({ ceremony: !this.state.ceremony }))}
+            {buttonFunc('Reception 5pm 9th April @ Berry school of arts community hall', this.state.reception, () => this.setState({ reception: !this.state.reception }))}
           </div>
           <div className='row dietary'>
             <p>Please indicate any dietary requirements below.</p>
