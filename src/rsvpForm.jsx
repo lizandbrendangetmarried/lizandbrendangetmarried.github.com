@@ -79,7 +79,7 @@ export default class RsvpForm extends Component {
             <p>Please indicate any dietary requirements below.</p>
             <button type='button' className={this.state.dietary === 'everything' ? 'active' : null} onClick={() => this.setState({ dietary: 'everything' })}>Eats everything</button>
             <button type='button' className={this.state.dietary === 'vegetarian' ? 'active' : null} onClick={() => this.setState({ dietary: 'vegetarian' })}>Vegetarian</button>
-            <button type='button' className={this.state.dietary === 'other' ? 'active' : null} onClick={() => this.setState({ dietary: 'other' })}>Other (unlucky)</button>
+            <button type='button' className={this.state.dietary === 'other' ? 'active' : null} onClick={() => this.setState({ dietary: 'other' })}>Other (we&#39;ll be in touch)</button>
           </div>
           <div className='row action'>
             <button type='button' onClick={this._submitForm.bind(this)}>Submit</button>
