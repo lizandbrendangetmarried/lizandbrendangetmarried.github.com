@@ -1,10 +1,12 @@
 body {
   font-family: Helvetica;
+  color: #191919;
 }
 
 h1, h2, h3 {
   font-family: 'Vidaloka';
   text-align: center;
+  color: gray;
 }
 
 h1 {
@@ -16,24 +18,21 @@ h2, h3 {
   font-size: 16pt;
 }
 
+p {
+  background: #fff;
+}
+
+body {
+  background: url('flower-1.png') no-repeat 20px 140px;
+}
+
+div#root {
+  background: url('flower-2.png') no-repeat right 140px;
+}
+
 section.container div.image-wrapper {
   text-align: center;
-  position: relative;
 }
-
-/*section.container div.image-wrapper img {
-  width: 100%;
-  height: 100%;
-}
-
-.section.container div.image-wrapper:before {
-  display:block;
-  content:'';
-  position:absolute;
-  -moz-box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,1);
-  -webkit-box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,1);
-  box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,1);
-}*/
 
 section.rsvp-form {
   padding: 10px;
@@ -107,5 +106,9 @@ section.container {
   section.container {
     width: 100%;
     margin-left: 0;
+  }
+
+  body, div#root {
+    background: none;
   }
 }
