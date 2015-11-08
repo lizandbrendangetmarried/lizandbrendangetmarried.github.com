@@ -36,7 +36,7 @@ export default class RsvpForm extends Component {
     .then(() => {
       this.setState({ sent: true });
       console.log('success!');
-    }, (err) => console.log('error!', err));
+    }, (err, response) => console.log('error!', err, response));
   }
 
   _handleNameChange(newValue) {
@@ -48,6 +48,10 @@ export default class RsvpForm extends Component {
   }
 
   render() {
+    if(this.state.sent) {
+      return <h3>Thanks, we look forward to seeing you there!</h3>;
+    }
+
     let nameLink = {
       value: this.state.name,
       requestChange: this._handleNameChange

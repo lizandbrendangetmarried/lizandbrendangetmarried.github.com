@@ -6,7 +6,7 @@ export default class App extends Component {
     return (
       <section>
         <h1>Liz & Brendan</h1>
-        <h2>09-04-2016</h2>
+        <h2>- 9th April 2016 -</h2>
         <RsvpForm />
       </section>
     );
