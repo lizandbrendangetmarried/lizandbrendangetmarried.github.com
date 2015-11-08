@@ -71,6 +71,7 @@ section.rsvp-form {
   font-weight: bold;
   float: left;
   height: 80px;
+  background: #fff;
 }
 
 .rsvp-form form > div.row.events > button:last-child,

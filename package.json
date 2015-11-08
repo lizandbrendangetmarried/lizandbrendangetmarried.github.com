@@ -43,7 +43,9 @@
   "dependencies": {
     "apostle.io": "^1.0.0",
     "extract-text-webpack-plugin": "^0.9.0",
+    "file-loader": "^0.8.4",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "url-loader": "^0.5.6"
   }
 }

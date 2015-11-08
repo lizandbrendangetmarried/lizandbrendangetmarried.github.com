@@ -45,7 +45,11 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
       },
-      { test: /\.css$/, loader: cssLoader }
+      { test: /\.css$/, loader: cssLoader },
+      {
+        test: /\.(jpe?g|png|gif)/,
+        loader: 'url-loader?limit=' + (10 * 1000)
+      }
     ]
   }
 };
