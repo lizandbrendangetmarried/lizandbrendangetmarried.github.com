@@ -100,12 +100,15 @@ section.rsvp-form {
 section.container {
   width: 70%;
   margin-left: 15%;
+  min-height: 700px;
+  min-width: 540px;
 }
 
 @media (max-width: 900px) {
   section.container {
     width: 100%;
     margin-left: 0;
+    min-height: auto;
   }
 
   body, div#root {
