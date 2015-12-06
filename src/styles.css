@@ -46,6 +46,7 @@ section.rsvp-form {
   width: 50%;
   border: solid 1px #d3d3d3;
   border-right: none;
+  border-radius: 0;
 }
 
 .rsvp-form form > div.row > input:last-child {
