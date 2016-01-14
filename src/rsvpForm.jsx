@@ -83,7 +83,11 @@ export default class RsvpForm extends Component {
 
     return (
       <section className='rsvp-form'>
-        <p>Please indicate if you are able to attend our wedding using the form below.</p>
+        <p>
+          Please let us know if you are able to attend our wedding using the form below. If you need any help finding accommodation, or have questions about the location
+          please <a href='https://drive.google.com/file/d/0B8RgVdQLrvOoeFdYVHRDUHBpbXc/view?usp=sharing' target='_blank'>view this document</a>, or alternatively drop us
+          an email at <a href='mailto:lizandbrendangetmarried@gmail.com'>lizandbrendangetmarried@gmail.com</a>.
+        </p>
         <form>
           <div className='row'>
             <input type='text' required placeholder='Family name' valueLink={nameLink} />

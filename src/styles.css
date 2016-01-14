@@ -20,6 +20,12 @@ h2, h3 {
 
 p {
   background: #fff;
+  line-height: 24px;
+}
+
+p a {
+  color: navy;
+  font-weight: bold;
 }
 
 body {
