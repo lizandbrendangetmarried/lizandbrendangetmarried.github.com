@@ -7,6 +7,7 @@ export default class RsvpForm extends Component {
     this.state = {
       name: '',
       email: '',
+      guests: null,
       friday: false,
       ceremony: true,
       reception: true,
@@ -16,6 +17,7 @@ export default class RsvpForm extends Component {
 
     this._handleNameChange = this._handleNameChange.bind(this);
     this._handleEmailChange = this._handleEmailChange.bind(this);
+    this._handleGuestChange = this._handleGuestChange.bind(this);
   }
 
   _submitForm() {
@@ -47,6 +49,10 @@ export default class RsvpForm extends Component {
     this.setState({ email: newValue });
   }
 
+  _handleGuestChange(newValue) {
+    this.setState({ guests: newValue });
+  }
+
   render() {
     if(this.state.sent) {
       return <h3>Thanks, we look forward to seeing you there!</h3>;
@@ -62,6 +68,11 @@ export default class RsvpForm extends Component {
       requestChange: this._handleEmailChange
     };
 
+    let guestsLink = {
+      value: this.state.guests,
+      requestChange: this._handleGuestChange
+    };
+
     let buttonFunc = (label, isActive, onClick) => {
       let tick = null;
       if (isActive) {
@@ -75,8 +86,9 @@ export default class RsvpForm extends Component {
         <p>Please indicate if you are able to attend our wedding using the form below.</p>
         <form>
           <div className='row'>
-            <input type='text' required placeholder='Name' valueLink={nameLink} />
-            <input type='email' required placeholder='Email' valueLink={emailLink} />
+            <input type='text' required placeholder='Family name' valueLink={nameLink} />
+            <input type='email' required placeholder='Contact email' valueLink={emailLink} />
+            <input type='number' required placeholder='Number of guests' valueLink={guestsLink} />
           </div>
           <div className='row events'>
             {buttonFunc('Friday evening 8th April @ Berry Inn Hotel', this.state.friday, () => this.setState({ friday: !this.state.friday }))}

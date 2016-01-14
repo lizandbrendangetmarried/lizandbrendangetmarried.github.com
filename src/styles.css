@@ -42,11 +42,21 @@ section.rsvp-form {
   padding: 6px;
   width: 300px;
   line-height: 34px;
-  font-size: 18pt;
-  width: 50%;
+  font-size: 16pt;
+  width: 33.3%;
   border: solid 1px #d3d3d3;
   border-right: none;
   border-radius: 0;
+}
+
+.rsvp-form form > div.row > input[type=number]::-webkit-inner-spin-button,
+.rsvp-form form > div.row > input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.rsvp-form form > div.row > input:focus {
+  outline: none;
 }
 
 .rsvp-form form > div.row > input:last-child {
