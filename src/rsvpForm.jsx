@@ -30,6 +30,7 @@ export default class RsvpForm extends Component {
       email: 'lizandbrendangetmarried+rsvp@gmail.com',
       guestName: this.state.name,
       guestEmail: this.state.email,
+      guests: this.state.guests,
       friday: this.state.friday,
       ceremony: this.state.ceremony,
       reception: this.state.reception,
